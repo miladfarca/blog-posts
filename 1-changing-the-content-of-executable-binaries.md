@@ -2,7 +2,7 @@
 In this blog we are going to see how an executable binary file can be edited using native tools on most Linux distributions.
 
 #### What you need
-```
+```text
 vim (or any other text editor)
 gcc (or any other C compiler)
 xxd
