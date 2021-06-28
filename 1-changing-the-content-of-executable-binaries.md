@@ -51,7 +51,7 @@ The number `123` is displayed as `0x7b` in hexadecimal format. In the above gene
 before calling `printf`.
 
 Let's use `xxd` to get the hexdump of the file and save it separately:
-```
+```text
 # xxd print > print.hex
 ```
 The hexdump has more than 1000 lines of content. We ware going to search for the `7b` pattern and change it to `7c` which represents `124` in decimal.
