@@ -9,7 +9,7 @@ xxd
 objdump
 ```
 
-####
+#### Procedure
 Let's first create a simple executable binary file which prints the number `123` on the screen.
 This program will be written in C, open a new file in your text editor, name it `print.c` and paste the following:
 ```c
