@@ -1,5 +1,5 @@
 This is the first blog.
 
-```C++
-Samepl line of code
+```c++
+int a = 5;
 ```
