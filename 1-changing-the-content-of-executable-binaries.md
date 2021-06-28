@@ -22,13 +22,13 @@ int main(){
 ```
 Compile it with `gcc print.c -o print` which outputs an executable file called `print`.
 Running `./print` should display `123` on your terminal:
-```text
+```bash
 # ./print
 123
 ```
 
 Now let's use `objdump` to examine the instructions within this binary file:
-```
+```bash
 # objdump -d print
 ...
 0000000000001149 <main>:
@@ -57,29 +57,29 @@ Let's use `xxd` to get the hexdump of the file and save it separately:
 The hexdump has more than 1000 lines of content. We ware going to search for the `7b` pattern and change it to `7c` which represents `124` in decimal.
 
 The line will look like this before changing:
-```
+```text
 00001150: e5be 7b00 0000 488d 3da7 0e00 00b8 0000  ..{...H.=.......
 ```
 
 Simply change `7b` to `7c` and save:
-```
+```text
 00001150: e5be 7c00 0000 488d 3da7 0e00 00b8 0000  ..{...H.=.......
 ```
 
 Note that `endianness` is not a concern here as we are only changing a single byte. We will talk about this in more detail in a future post.
 
 Now we are going to reuse `xxd` to convert this hexdump back into binary, we will need to ue the `-r` flag for reverse operation.
-```
+```bash
 # xxd -r print.hex > ./print_changed 
 ```
 
 The newly generated binary file is not executable, we will need to mark it as such using `chmod`:
-```
+```bash
 # chmod +x ./print_changed
 ```
 
 Now you can run this new binary file and see the output has changed from `123` to `124`:
-```
+```bash
 # ./print_changed 
 124
 ```
@@ -90,7 +90,7 @@ A character is 1 byte (8 bits). The byte sized integer `0` is saved as `00000000
 saved as `110000`. The list of characters and their binary and hex representations can be seen in an `Ascii Table`.
 You will need a converter such as `xxd` to convert your characters to binary and vice versa. This is why binary files are not generally readable using a text editor. Trying to 
 do so will print gibberish on your screen similar to this:
-```
+```text
 ^B^A^A^@^@^@^@^@^@^@^@^@^C^@>
 ```
 Note there are many `hex editors` which will do the conversion for you behind the scenes. We have used `xxd` here as its commonly available in many
