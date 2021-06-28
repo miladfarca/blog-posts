@@ -22,7 +22,7 @@ int main(){
 ```
 Compile it with `gcc print.c -o print` which outputs an executable file called `print`.
 Running `./print` should display `123` on your terminal:
-```
+```text
 # ./print
 123
 ```
