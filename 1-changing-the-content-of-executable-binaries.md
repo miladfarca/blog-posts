@@ -1,5 +1,5 @@
 #### Objective
-In this blog we are going to see how an executable binary file can be edited using native tools on most Linux distributions.
+In this blog we are going to see how an executable binary file can be edited using common tools on most Linux distributions.
 
 #### What you need
 ```text
