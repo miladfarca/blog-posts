@@ -68,7 +68,7 @@ Simply change `7b` to `7c` and save:
 
 Note that `endianness` is not a concern here as we are only changing a single byte. We will talk about this in more detail in a future post.
 
-Now we are going to reuse `xxd` to convert this hexdump back into binary, we will need to ue the `-r` flag for reverse operation.
+Now we are going to reuse `xxd` to convert this hexdump back into binary, we will need to use the `-r` flag for reverse operation.
 ```bash
 # xxd -r print.hex > ./print_changed 
 ```
