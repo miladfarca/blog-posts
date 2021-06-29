@@ -45,7 +45,7 @@ Now let's use `objdump` to examine the instructions within this binary file:
     116e:	66 90                	xchg   %ax,%ax
 ...
 ```
-Note that there are many additional printed lines which we are interested in at the moment, we will only be examining the output of the `main` function.
+Note that there are many additional printed lines which we are not interested in at the moment, we will only be examining the output of the `main` function.
 
 The number `123` is displayed as `0x7b` in hexadecimal format. In the above generated instructions `0x7b` is being put into the `esi` register
 before calling `printf`.
