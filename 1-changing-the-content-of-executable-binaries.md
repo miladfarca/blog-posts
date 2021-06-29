@@ -54,7 +54,7 @@ Let's use `xxd` to get the hexdump of the file and save it separately:
 ```text
 # xxd print > print.hex
 ```
-The hexdump has more than 1000 lines of content. We ware going to search for the `7b` pattern and change it to `7c` which represents `124` in decimal.
+The hexdump has more than 1000 lines of content. We are going to search for the `7b` pattern and change it to `7c` which represents `124` in decimal.
 
 The line will look like this before changing:
 ```text
@@ -93,7 +93,7 @@ do so will print gibberish on your screen similar to this:
 ```text
 ^B^A^A^@^@^@^@^@^@^@^@^@^C^@>
 ```
-Note there are many `hex editors` which will do the conversion for you behind the scenes. We have used `xxd` here as its commonly available in many
+Note there are many `hex editors` which will do the conversion for you behind the scene. We have used `xxd` here as it's commonly available in many
 Linux distros.
 
 We will be writing our own simple converter in a future post.
