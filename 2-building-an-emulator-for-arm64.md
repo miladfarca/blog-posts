@@ -11,7 +11,7 @@ gcc-aarch64-linux-gnu
 binutils-aarch64-linux-gnu
 ```
 ### Source code
-Source code can be found in this repository: https://github.com/miladfarca/arm64-emulator
+Source code can be found in this repository: [https://github.com/miladfarca/arm64-emulator](https://github.com/miladfarca/arm64-emulator)
 
 #### Procedure
 Emulators usually load an external binary file and emulate its instructions. To make the process easier, the binary
@@ -86,4 +86,4 @@ sys	0m0.128s
 
 Tests were executed multiple times and results were similar in value. This clearly shows how emulation is **significantly** slower than running instructions natively. The following figure shows the data using a graph bar:
 
-<image width="50%" src="images/2-a.png">
+<image width="50%" src="https://github.com/miladfarca/blog-posts/raw/main/images/2-a.png">
