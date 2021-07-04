@@ -52,13 +52,26 @@ as the `x64` assembler cannot understand them. We need to extract their hexadeci
 
 We also need to make sure `arm64_add` is marked as global using the `.globl` directive so the linker can find it later in the process.
 
-4- The emulator will point to the first byte of `arm64_add` function. The pointer is `32 bit integer` sized. We load 32 bit values into memory and examine them. If the value matches our list of instructions then we will emulate them according to the `Aarch64 instruction set architecture`.
+4- The emulator will point to the first byte of `arm64_add` function. The pointer is `32 bit integer` sized. We load 32 bit values into memory and examine them. If the value matches our list of instructions then we will emulate them according to the `aarch64 instruction set architecture`.
+
+### The emulator
+In order to execute the `add` function, we need to emulate the following 6 instructions of arm64:
+```text
+ldr: Load
+str: Store
+add: Add register, immediate
+sub: Subtract register, immediate
+add: Add register, register
+ret: Return
+```
+The emulator needs to follow the `arm64 ABI`. Parameters are initially placed into registers `w0` and `w1`. 
+The stack pointer needs to be initialized and its value must be placed into the stack pointer register `w31`.
 
 #### Runtime performance of emulating vs running on a native host
 The emulator contains a loop to run the `add` function natively as well as using the emulator so we can
 measure and compare their runtime performance. The loop runs `33,554,432` times.
 
-We will compile and run both versions on the same Arm64 host, the machine details are as follows:
+We will compile and run both versions on the same arm64 host, the machine details are as follows:
 ```text
 Architecture:        aarch64
 Model name:          Cortex-A53
@@ -86,4 +99,4 @@ sys	0m0.128s
 
 Tests were executed multiple times and results were similar in value. This clearly shows how emulation is **significantly** slower than running instructions natively. The following figure shows the data using a graph bar:
 
-<image width="50%" src="https://github.com/miladfarca/blog-posts/raw/main/images/2-a.png">
+<image width="70%" src="https://github.com/miladfarca/blog-posts/raw/main/images/2-a.png">
