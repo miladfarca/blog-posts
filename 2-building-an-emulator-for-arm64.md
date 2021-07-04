@@ -48,8 +48,7 @@ The following command creates an object file named `add.o` containing arm64 inst
 Note: Instructions are stored in `little endian` order in memory, they are displayed in human readable order with `objdump` above.
 As an example, `sub	sp, sp, #0x10` is stored as `0xff 0x43 0x00 0xd1`.
 
-3- Extract the hex values and store them in a separate assembly file (`.s` file) using `.long` directives. We need to compile our emulator source code with the `add` function included in the final binary. The source file may be compiled in a non arm64 environment (i.e `x64`), however we still need to make sure the `add` function is compiled into `arm64` instructions. For this reason we cannot use native `arm64` instructions in the assembly file
-as the `x64` assembler cannot understand them. We need to extract their hexadecimal values and emit them as `long` integral values which is understandable by the assembler of most other platforms.
+3- Extract the hex values and store them in a separate assembly file (`.s` file) using `.long` directives. We need to compile our emulator source code with the `add` function included in the final binary. The source file may be compiled in a non arm64 environment (i.e `x64`), however we still need to make sure the `add` function is compiled into `arm64` instructions. We cannot use native `arm64` opcodes in the assembly file as the `x64` assembler cannot understand them. We need to extract their hexadecimal values and emit them as `long` integral values which is understandable by most assemblers.
 
 We also need to make sure `arm64_add` is marked as global using the `.globl` directive so the linker can find it later in the process.
 
