@@ -68,8 +68,8 @@ The emulator needs to follow the `arm64 ABI`. Parameters are initially placed in
 The stack pointer needs to be initialized and its value must be placed into the stack pointer register `w31`.
 
 #### Runtime performance of emulating vs running on a native host
-The emulator contains a loop to run the `add` function natively as well as using the emulator which we can
-use to measure and compare their runtime performance. The loop runs `33,554,432` times.
+The emulator contains a loop to run the `add` function natively as well as using the emulator which helps us 
+compare their runtime performance. The loop runs `33,554,432` times.
 
 We will compile and run both versions on the same arm64 host, the machine details are as follows:
 ```text
